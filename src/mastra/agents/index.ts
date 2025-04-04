@@ -1,9 +1,16 @@
-import { openai } from '@ai-sdk/openai';
-import { Agent } from '@mastra/core/agent';
-import { weatherTool } from '../tools';
+import { openai } from "@ai-sdk/openai";
+import { Agent } from "@mastra/core/agent";
+import { weatherTool } from "../tools";
+import { Memory } from "@mastra/memory";
+
+const memory = new Memory({
+  options: {
+    lastMessages: 5, // Keep 5 most recent messages
+  },
+});
 
 export const weatherAgent = new Agent({
-  name: 'Weather Agent',
+  name: "Weather Agent",
   instructions: `
       You are a helpful weather assistant that provides accurate weather information.
 
@@ -16,6 +23,6 @@ export const weatherAgent = new Agent({
 
       Use the weatherTool to fetch current weather data.
 `,
-  model: openai('gpt-4o'),
+  model: openai("gpt-4o"),
   tools: { weatherTool },
 });
