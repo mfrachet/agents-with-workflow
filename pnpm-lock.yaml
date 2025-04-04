@@ -17,6 +17,9 @@ importers:
       '@mastra/memory':
         specifier: ^0.2.6
         version: 0.2.6(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-providers@3.778.0)(@huggingface/transformers@3.4.2)(cohere-ai@7.16.0)(gpt-tokenizer@2.9.0)(openai@4.91.1(ws@8.18.1)(zod@3.24.2))(pg-query-stream@4.8.1(pg@8.14.1))(react@19.1.0)(tree-sitter@0.22.4)(typescript@5.8.2)(web-tree-sitter@0.24.7)(ws@8.18.1)
+      '@mastra/pg':
+        specifier: ^0.2.6
+        version: 0.2.6(pg-query-stream@4.8.1(pg@8.14.1))(react@19.1.0)
       mastra:
         specifier: '*'
         version: 0.4.4(@opentelemetry/api@1.9.0)(react@19.1.0)(typescript@5.8.2)
@@ -1090,6 +1093,9 @@ packages:
 
   '@mastra/memory@0.2.6':
     resolution: {integrity: sha512-a42mMjd/qm4m44jpzm9QqLuXril4yJyK/JZ4Il89FY10zeUmONRYW5GWgageS5uJ2T5fM/XdvWRM3yMMptc5GQ==}
+
+  '@mastra/pg@0.2.6':
+    resolution: {integrity: sha512-hWy6ro7E0Bpu+KgvFtO2bUlqIPAvLsrEkDTeI2TmOTeJOfSQ1ugTDRb+oxSDHlq+xzBrCD9RGRc9GRlvL9+ALA==}
 
   '@mastra/rag@0.1.14':
     resolution: {integrity: sha512-QVef5EtUdmF2/Qr9tpYjAmPi/rFz11gj1zzftnv2n/85gQqY7aPqzo+BerchgfEVoENAysJAThTC+/myZZdMkw==}
@@ -6357,6 +6363,21 @@ snapshots:
       - voyageai
       - web-tree-sitter
       - ws
+
+  '@mastra/pg@0.2.6(pg-query-stream@4.8.1(pg@8.14.1))(react@19.1.0)':
+    dependencies:
+      '@mastra/core': 0.7.0(react@19.1.0)
+      pg: 8.14.1
+      pg-promise: 11.13.0(pg-query-stream@4.8.1(pg@8.14.1))
+    transitivePeerDependencies:
+      - aws-crt
+      - bufferutil
+      - encoding
+      - pg-native
+      - pg-query-stream
+      - react
+      - supports-color
+      - utf-8-validate
 
   '@mastra/rag@0.1.14(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/credential-providers@3.778.0)(@huggingface/transformers@3.4.2)(ai@4.2.10(react@19.1.0)(zod@3.24.2))(cohere-ai@7.16.0)(gpt-tokenizer@2.9.0)(openai@4.91.1(ws@8.18.1)(zod@3.24.2))(pg-query-stream@4.8.1(pg@8.14.1))(pg@8.14.1)(react@19.1.0)(tree-sitter@0.22.4)(typescript@5.8.2)(web-tree-sitter@0.24.7)(ws@8.18.1)':
     dependencies:

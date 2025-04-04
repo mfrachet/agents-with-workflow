@@ -2,11 +2,13 @@ import { openai } from "@ai-sdk/openai";
 import { Agent } from "@mastra/core/agent";
 import { weatherTool } from "../tools";
 import { Memory } from "@mastra/memory";
+import { PgVector } from "@mastra/pg";
 
 const memory = new Memory({
-  options: {
-    lastMessages: 5, // Keep 5 most recent messages
-  },
+  // Use a different vector database (libsql is default)
+  vector: new PgVector(process.env.NEXT_PUBLIC_DB!),
+  // Or a different embedder (fastembed is default)
+  embedder: openai.embedding("text-embedding-3-small"),
 });
 
 export const weatherAgent = new Agent({
