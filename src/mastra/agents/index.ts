@@ -27,4 +27,5 @@ export const weatherAgent = new Agent({
 `,
   model: openai("gpt-4o"),
   tools: { weatherTool },
+  memory,
 });
